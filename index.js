@@ -104,8 +104,23 @@ Remaining server codes: ${codes.length}
 </div>
 
 <div class="buttons">
-  <a class="ai" href="#">OPEN AI</a>
-  <a class="ebook" href="#">OPEN EBOOK</a>
+  <a 
+    class="ai" 
+    href="https://gemini.google.com/gem/1GXwkzDXe-HjMtE5K3eq9-8CNh4Q3trBu?usp=sharing" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    OPEN AI
+  </a>
+
+  <a 
+    class="ebook" 
+    href="https://1drv.ms/b/c/af8a827fb8c189ff/IQBXA82JtsfGQqwDTaFdXgdPAVqjhkMqEMKqTm_kyWsYti0?e=ySypji" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    OPEN EBOOK
+  </a>
 </div>
 
 </div>
