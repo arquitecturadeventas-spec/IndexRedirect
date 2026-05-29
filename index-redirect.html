@@ -1,1 +1,504 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal AI PRO — Access Code</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0c0c10;
+  --surface: #111116;
+  --border: #1c1c26;
+  --border-light: #252535;
+  --accent: #4a68f0;
+  --accent-dim: rgba(74,104,240,0.10);
+  --gold: #c9a84c;
+  --gold-dim: rgba(201,168,76,0.08);
+  --text: #ccccd8;
+  --text-dim: #5a5a72;
+  --text-mid: #8888a0;
+  --success: #3ecf8e;
+  --danger: #e05555;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', 'Garamond', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(74,104,240,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74,104,240,0.025) 1px, transparent 1px);
+  background-size: 52px 52px;
+  pointer-events: none; z-index: 0;
+}
+
+.page {
+  position: relative; z-index: 1;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 2.5rem 1.25rem;
+}
+
+/* Logo */
+.logo-bar {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 2.5rem;
+  opacity: 0; animation: fadeUp 0.5s ease forwards;
+}
+.logo-icon {
+  width: 34px; height: 34px;
+  background: var(--accent-dim);
+  border: 1px solid rgba(74,104,240,0.25);
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-icon img { width: 18px; height: 18px; object-fit: contain; }
+.logo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 600;
+  letter-spacing: 0.06em; color: var(--text);
+}
+.logo-name span {
+  color: var(--accent); font-size: 0.6rem;
+  display: block; margin-top: -4px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.2em;
+}
+
+/* Card */
+.card {
+  width: 100%; max-width: 500px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  opacity: 0; animation: fadeUp 0.5s ease 0.1s forwards;
+}
+
+.card-head {
+  padding: 1.75rem 2rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.card-head-row {
+  display: flex; align-items: flex-start; gap: 0.9rem;
+}
+.dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 7px var(--success);
+  margin-top: 7px; flex-shrink: 0;
+  animation: pulse 2.5s ease infinite;
+}
+.card-head h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem; font-weight: 700;
+  color: #e8e8f0; line-height: 1.2;
+}
+.card-head p {
+  font-size: 0.78rem; color: var(--text-dim);
+  margin-top: 3px; font-family: 'DM Mono', monospace;
+  letter-spacing: 0.03em;
+}
+
+.card-body { padding: 1.75rem 2rem; }
+
+/* Verified badge */
+.verified {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(62,207,142,0.06);
+  border: 1px solid rgba(62,207,142,0.18);
+  border-radius: 7px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.72rem; color: var(--success);
+  margin-bottom: 1.6rem;
+  font-family: 'DM Mono', monospace;
+}
+.verified::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%; background: var(--success);
+  flex-shrink: 0;
+}
+
+/* Warning box — shown before reveal */
+.warning-box {
+  background: rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.22);
+  border-radius: 10px;
+  padding: 1.2rem 1.3rem;
+  margin-bottom: 1.5rem;
+}
+.warning-box .w-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+.warning-box p {
+  font-size: 0.82rem;
+  color: #b0a080;
+  line-height: 1.6;
+  font-family: 'EB Garamond', serif;
+}
+
+/* Confirm button */
+.confirm-btn {
+  display: block; width: 100%;
+  background: var(--gold);
+  color: #0c0c10;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem; font-weight: 700;
+  letter-spacing: 0.08em;ENDOFFILE
+Salida
+  text-transform: uppercase;
+  padding: 0.85rem;
+  border-radius: 9px; border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.confirm-btn:hover { background: #d4b05c; transform: translateY(-1px); }
+.confirm-btn:active { transform: translateY(0); }
+
+/* Code section */
+.code-section { display: none; }
+.code-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  margin-bottom: 0.55rem;
+  font-family: 'DM Mono', monospace;
+}
+.code-block {
+  position: relative;
+  background: #0a0a0e;
+  border: 1px solid var(--border-light);
+  border-radius: 11px;
+  padding: 1.25rem 1.1rem;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+.code-block::after {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 11px;
+  background: var(--gold-dim);
+  pointer-events: none;
+}
+#code-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.25rem; font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  word-break: break-all;
+}
+.copy-btn {
+  flex-shrink: 0;
+  background: var(--accent-dim);
+  border: 1px solid rgba(74,104,240,0.28);
+  border-radius: 7px;
+  padding: 0.38rem 0.8rem;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-family: 'DM Mono', monospace;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+  position: relative; z-index: 1;
+}
+.copy-btn:hover { background: rgba(74,104,240,0.2); }
+.copy-btn.copied {
+  background: rgba(62,207,142,0.1);
+  border-color: rgba(62,207,142,0.28);
+  color: var(--success);
+}
+ENDOFFILE
+Salida
+.once-notice {
+  font-size: 0.74rem;
+  color: var(--danger);
+  font-family: 'DM Mono', monospace;
+  margin-bottom: 1.6rem;
+  opacity: 0.85;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+/* Action buttons */
+.btn-row { display: flex; flex-direction: column; gap: 0.75rem; }
+.btn {
+  display: block; width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 9px; border: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem; font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s, border-color 0.2s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover { background: #3a58e0; }
+.btn-secondary {
+  background: transparent;
+  color: var(--text-mid);
+  border: 1px solid var(--border-light);
+}
+.btn-secondary:hover { border-color: var(--text-dim); color: var(--text); }
+
+.card-foot {
+  padding: 1rem 2rem;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between;
+  font-size: 0.7rem; color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+}
+
+/* Already delivered */
+.already-wrap {
+  width: 100%; max-width: 500px;
+  display: none;
+  opacity: 0; animation: fadeUp 0.5s ease forwards;
+}
+.already-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+.already-card h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 700;
+  color: #e0e0ec; margin-bottom: 1rem;
+}
+.already-card p {
+  font-size: 0.85rem; color: var(--text-mid);
+  max-width: 360px; margin: 0 auto 1.5rem;
+  line-height: 1.65;
+}
+.rule-ref {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem; margin-top: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Loading */
+.loading-wrap { padding: 2.5rem 2rem; text-align: center; }
+.spinner {
+  width: 28px; height: 28px;
+  border: 2px solid var(--border-light);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 0 auto 1rem;
+}
+.loading-wrap p { font-size: 0.78rem; color: var(--text-dim); font-family: 'DM Mono', monospace; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.35; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="logo-bar">
+    <div class="logo-icon">
+      <img src="https://i.postimg.cc/d3bGsYcD/balancadorada.png" alt="">
+    </div>
+    <div class="logo-name">Legal AI <span>PRO</span></div>
+  </div>
+
+  <!-- Main card -->
+  <div class="card" id="main-card">
+    <div class="card-head">
+      <div class="card-head-row">
+        <div class="dot"></div>
+        <div>
+          <h1>Payment confirmed</h1>
+          <p>Transaction verified — proceed to retrieve your access code</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-body" id="card-body">
+      <div class="loading-wrap">
+        <div class="spinner"></div>
+        <p>Verifying transaction...</p>
+      </div>
+    </div>
+    <div class="card-foot">
+      <span>Legal AI PRO &copy; 2026</span>
+      <span>Single-use licence</span>
+    </div>
+  </div>
+
+  <!-- Already delivered -->
+  <div class="already-wrap" id="already-wrap">
+    <div class="already-card">
+      <h2>Access code previously issued</h2>
+      <p>
+        This licence key was delivered during the initial session following payment.
+        For security reasons, each transaction generates a single access code
+        which is displayed once and cannot be recovered through this interface.
+      </p>
+      <a href="mailto:support@legalAIpro.com?subject=CODE" class="btn btn-primary" style="display:inline-block; width:auto; padding:0.75rem 2rem;">
+        Contact support
+      </a>
+      <div class="rule-ref">
+        Pursuant to Art. 6(1)(b) GDPR — processing necessary for the performance of a contract.<br>
+        Licence issuance records retained in accordance with applicable data retention obligations.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── CONFIGURATION ────────────────────────────────────────────────
+const WORKER_URL  = "https://YOUR_WORKER.YOUR_SUBDOMAIN.workers.dev";
+const AI_URL      = "https://YOUR_AI_TOOL_URL";
+const PDF_URL     = "https://YOUR_PDF_URL";
+// ────────────────────────────────────────────────────────────────
+
+function getCookie(n) {
+  return document.cookie.split(";").map(c=>c.trim())
+    .find(c=>c.startsWith(n+"="))?.split("=")[1]||null;
+}
+function setCookie(n,v,days) {
+  const d=new Date();
+  d.setTime(d.getTime()+days*86400000);
+  document.cookie=`${n}=${v}; expires=${d.toUTCString()}; path=/; SameSite=Lax`;
+}
+
+function showAlready() {
+  document.getElementById("main-card").style.display = "none";
+  const w = document.getElementById("already-wrap");
+  w.style.display = "block";
+}
+
+function renderWarning(code) {
+  document.getElementById("card-body").innerHTML = `
+    <div class="verified">Transaction verified by PayPal</div>
+    <div class="warning-box">
+      <div class="w-title">Notice — read before proceeding</div>
+      <p>
+        Your access code will be displayed once only. It will not be stored,
+        recoverable, or shown again after this session. Copy it immediately
+        and retain it in a secure location before closing this page.
+      </p>
+    </div>
+    <button class="confirm-btn" onclick="revealCode('${code}')">
+      I understand — reveal my code
+    </button>
+  `;
+}
+
+function revealCode(code) {
+  document.getElementById("card-body").innerHTML = `
+    <div class="verified">Transaction verified by PayPal</div>
+    <div class="code-section" id="cs" style="display:block;">
+      <div class="code-label">Access code — single display</div>
+      <div class="code-block">
+        <span id="code-value">${code}</span>
+        <button class="copy-btn" id="copy-btn" onclick="doCopy('${code}')">Copy</button>
+      </div>
+      <div class="once-notice">This code is now hidden permanently. Copy it before navigating away.</div>
+    </div>
+    <hr class="divider">
+    <div class="btn-row">
+      <a href="${AI_URL}" target="_blank" class="btn btn-primary">Access the AI</a>
+      <a href="${PDF_URL}" target="_blank" class="btn btn-secondary" onclick="lockPDF()">Download PDF guide</a>
+    </div>
+  `;
+  // hide code on blur/navigate away
+  window.addEventListener("blur", hideCode);
+  document.addEventListener("visibilitychange", ()=>{ if(document.hidden) hideCode(); });
+}
+
+function hideCode() {
+  const el = document.getElementById("code-value");
+  if (el) el.textContent = "[ hidden ]";
+  const btn = document.getElementById("copy-btn");
+  if (btn) btn.style.display = "none";
+}
+
+function doCopy(code) {
+  navigator.clipboard.writeText(code).then(()=>{
+    const btn = document.getElementById("copy-btn");
+    if(btn){ btn.textContent="Copied"; btn.classList.add("copied"); }
+  });
+}
+
+function lockPDF() {
+  setCookie("pdf_downloaded","true",365);
+}
+
+async function init() {
+  if (getCookie("code_delivered")==="true") { showAlready(); return; }
+
+  try {
+    const res  = await fetch(WORKER_URL, { credentials:"include" });
+    const data = await res.json();
+
+    if (res.status===403 || data.error==="already_delivered") {
+      setCookie("code_delivered","true",365);
+      showAlready(); return;
+    }
+    if (!res.ok || !data.code) throw new Error();
+
+    setCookie("code_delivered","true",365);
+    renderWarning(data.code);
+
+  } catch(e) {
+    document.getElementById("card-body").innerHTML = `
+      <div style="padding:1rem 0; text-align:center;">
+        <p style="font-size:0.82rem; color:var(--text-dim); margin-bottom:1.5rem;">
+          Unable to verify the transaction. Contact support with your PayPal transaction ID.
+        </p>
+        <a href="mailto:support@legalAIpro.com?subject=CODE" class="btn btn-primary"
+           style="display:inline-block; width:auto; padding:0.75rem 2rem;">Contact support</a>
+      </div>`;
+  }
+}
+
+init();
+</script>
+</body>
+</html>
+
+
+exit code 0
+Listo
