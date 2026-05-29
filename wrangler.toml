@@ -1,5 +1,7 @@
 name = "legal-code"
+main = "index.js"
 compatibility_date = "2026-05-29"
 
-[assets]
-directory = "./public"
+[[kv_namespaces]]
+binding = "CODES_KV"
+id = "TU_KV_ID"
